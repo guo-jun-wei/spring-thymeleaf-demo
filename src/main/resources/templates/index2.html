@@ -1,0 +1,65 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+
+<body>
+<!--<h1 th:text="${message}"></h1>-->
+<!--<img th:src="${src.src1}"/>-->
+<!--</br>-->
+<!--<img th:src="${src.src2}"/>--
+<!--</br>-->
+<!--<span th:text="${user.id}"></span>-->
+<!--<span th:text="${user.name}"></span>-->
+<!--<span th:text="${user.age}"></span>-->
+
+<!--<br>-->
+
+<table width="200" style="text-align: center;">
+    <tr>
+        <th>编号</th>
+        <th>姓名</th>
+        <th>年龄</th>
+        <th>index</th>
+    </tr>
+
+    <tr th:each="user,itemStat:${list}">
+        <td th:text="${user.id}"></td>
+        <td th:text="${user.name}"></td>
+        <td th:text="${user.age}"></td>
+        <td th:text="${itemStat.index}">index</td>
+    </tr>
+
+
+</table>
+
+
+<hr/>
+
+<a th:href="${href}">gggg</a>
+<input type="text" th:value="${username}"/>
+<!-- 字符串拼接 -->
+<span th:text="'欢迎来:'+${userName}+'学习!'"></span>
+<!-- 字符串拼接 -->
+<span th:text="'欢迎来'+${userName}+'学习'"></span>
+<span th:text="|欢迎来:${userName}学习!|"/>
+
+
+<hr/>
+<h1 th:if="!${flag == 'yes'}">
+    hhhshhh
+</h1>
+
+
+<h1 th:if="${flag == 'yes'}">
+    hhhshhh
+</h1>
+
+
+</body>
+</html>
+
+
